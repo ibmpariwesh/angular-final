@@ -10,10 +10,14 @@ export class UserformComponent implements OnInit {
   user = {
     name: 'Ram',
     age: 10,
-    gender:"Male"
+    gender: "Male"
   }
   save() {
-    this.userService.createUser(this.user);
+    const observable = this.userService.createUser(this.user);
+    observable.subscribe(response => {
+      console.log(response);
+      
+    })
     console.log(event);
     console.log(this.user.name);
   }

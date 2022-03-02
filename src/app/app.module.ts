@@ -4,14 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { UserformComponent } from './userform/userform.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
     UserformComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
