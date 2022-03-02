@@ -1,3 +1,8 @@
+npm i -g json-server
+json-server db.json
+
+ng g service user
+
 # Myapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.1.
