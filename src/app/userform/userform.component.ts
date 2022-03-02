@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserformComponent implements OnInit {
   user = {
-    name:'Ram'
+    name: 'Ram',
+    age: 10
   }
-  save(){
+  save() {
     console.log(event);
+    console.log(this.user.name);
   }
   constructor() { }
 
