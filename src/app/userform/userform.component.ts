@@ -1,3 +1,4 @@
+import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 
@@ -12,14 +13,16 @@ export class UserformComponent implements OnInit {
     age: 10,
     gender: "Male"
   }
+  users = [];
   save() {
     const observable = this.userService.createUser(this.user);
-    observable.subscribe(response => {
+    observable.subscribe((response: any) => {//success handler
       console.log(response);
-      
-    })
-    console.log(event);
-    console.log(this.user.name);
+      this.users.push(response);
+    },
+      function (error) { //error handler
+        alert('something went wrong. Please try again.')
+      });
   }
   constructor(public userService: UserService) { }
 
