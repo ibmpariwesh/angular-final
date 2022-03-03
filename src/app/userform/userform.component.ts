@@ -14,6 +14,13 @@ export class UserformComponent implements OnInit {
     gender: "Male"
   }
   users = [];
+  deleteRow(user, index){
+    const observable =this.userService.deleteUser(user);
+    observable.subscribe((response: any) => {//success handler
+      console.log(response);
+      this.users.splice(index, 1);
+    });   
+  }
   save() {
     const observable = this.userService.createUser(this.user);
     observable.subscribe((response: any) => {//success handler
