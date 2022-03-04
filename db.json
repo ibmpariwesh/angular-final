@@ -1,4 +1,5 @@
 {
+  "subjects":["Sciense", "Arts", "Maths"],
   "users": [
     {
       "name": "Ram",
@@ -35,6 +36,62 @@
       "age": 10,
       "gender": "Male",
       "id": 6
+    },
+    {
+      "name": "Ram",
+      "age": 10,
+      "gender": "female",
+      "dob": "2022-03-11",
+      "id": 7
+    },
+    {
+      "name": "Ram",
+      "age": 10,
+      "gender": "Male",
+      "dob": "",
+      "id": 8
+    },
+    {
+      "name": "Ram",
+      "age": 10,
+      "gender": "Male",
+      "dob": "",
+      "id": 9
+    },
+    {
+      "name": "Ram",
+      "age": 10,
+      "gender": "Male",
+      "dob": "",
+      "id": 10
+    },
+    {
+      "name": "Ram",
+      "age": 10,
+      "gender": "Male",
+      "dob": "",
+      "id": 11
+    },
+    {
+      "name": "Ram",
+      "age": 10,
+      "gender": "Male",
+      "dob": "",
+      "id": 12
+    },
+    {
+      "name": "Ram",
+      "age": 10,
+      "gender": "Male",
+      "dob": "",
+      "id": 13
+    },
+    {
+      "name": "Ram",
+      "age": 10,
+      "gender": "Male",
+      "dob": "",
+      "id": 14
     }
   ]
 }

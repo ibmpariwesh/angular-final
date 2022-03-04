@@ -1,13 +1,27 @@
 <p>userform works!</p>
 <input [(ngModel)]='user.name'>
 <input [(ngModel)]='user.age'>
+DOB: <input type="date" [(ngModel)]='user.dob'>
 <input type="radio" [(ngModel)]="user.gender" name='gender' value="male">Male
-<input type="radio" [(ngModel)]="user.gender" name='gender'  value="female" >Female
-
+<input type="radio" [(ngModel)]="user.gender" name='gender' value="female">Female
+<div *ngFor='let subject of subjects'>
+    <input type="radio" [(ngModel)] = "user.subject" value={{subject}}>{{subject}}
+</div>
 <button (click)='save()'> Save</button>
+<table class="table">
+    <thead class='thead-dark'>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">DOB</th>
+    </thead>
+    <tbody >
+        <tr *ngFor='let user of users; index as i'>
+            <td>{{user.name}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.dob}}</td>
+            <td><button (click)='deleteRow(user, i)'> delete</button></td>
 
-<ol>
-    <li *ngFor='let user of users; index as i'>
-        {{user.name}},  {{user.age}}<button (click)='deleteRow(user, i)'> delete</button>
-    </li>
-</ol>
+        </tr>
+    </tbody>
+</table>
+

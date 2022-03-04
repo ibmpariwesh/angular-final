@@ -8,20 +8,26 @@ import { UserService } from '../user.service';
   styleUrls: ['./userform.component.css']
 })
 export class UserformComponent implements OnInit {
+  isOpen = false;
+  subjects: any[] = [];
   user = {
     name: 'Ram',
     age: 10,
-    gender: "Male"
+    gender: "Male",
+    dob: '',
+    subject:''
   }
   users = [];
-  deleteRow(user, index){
-    const observable =this.userService.deleteUser(user);
+  deleteRow(user, index) {
+    const observable = this.userService.deleteUser(user);
     observable.subscribe((response: any) => {//success handler
       console.log(response);
       this.users.splice(index, 1);
-    });   
+      this.isOpen = true;
+    });
   }
   save() {
+    // for(;;);
     const observable = this.userService.createUser(this.user);
     observable.subscribe((response: any) => {//success handler
       console.log(response);
@@ -34,6 +40,12 @@ export class UserformComponent implements OnInit {
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
+    console.log('init');
+    const observable = this.userService.getSubjects();
+    observable.subscribe((response: any) => {//arrow functions
+      console.log(response);
+      this.subjects = response;
+    })
   }
 
 }
