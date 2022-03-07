@@ -5,14 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { UserformComponent } from './userform/userform.component';
 import { HttpClientModule } from '@angular/common/http';
-import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
     UserformComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpClientModule, NgbModule,NgbAlertModule
+    BrowserModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

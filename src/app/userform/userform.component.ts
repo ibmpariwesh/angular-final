@@ -8,13 +8,13 @@ import { UserService } from '../user.service';
   styleUrls: ['./userform.component.css']
 })
 export class UserformComponent implements OnInit {
-  isOpen = false;
-  subjects: any[] = [];
+  isOpen = false; 
+  subjects: any[] = [];//state
   user = {
     name: 'Ram',
     age: 10,
     gender: "Male",
-    dob: '',
+    dob: new Date(),
     subject:''
   }
   users = [];
@@ -27,7 +27,7 @@ export class UserformComponent implements OnInit {
     });
   }
   save() {
-    // for(;;);
+    this.user.dob = new Date(this.user.dob);
     const observable = this.userService.createUser(this.user);
     observable.subscribe((response: any) => {//success handler
       console.log(response);

@@ -18,7 +18,7 @@ DOB: <input type="date" [(ngModel)]='user.dob'>
         <tr *ngFor='let user of users; index as i'>
             <td>{{user.name}}</td>
             <td>{{user.age}}</td>
-            <td>{{user.dob}}</td>
+            <td>{{user.dob | date}}</td>
             <td><button (click)='deleteRow(user, i)'> delete</button></td>
 
         </tr>
